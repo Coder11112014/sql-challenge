@@ -1,0 +1,46 @@
+
+CREATE TABLE IF NOT EXISTS public.departments
+(
+    dept_no character varchar(8) NOT NULL,
+    dept_name character varchar(50),
+    PRIMARY KEY (dept_no)
+);
+
+CREATE TABLE IF NOT EXISTS public.dept_emp
+(
+    dept_no character varchar(8) NOT NULL,
+    emp_no integer NOT NULL,
+    PRIMARY KEY (dept_no)
+);
+
+CREATE TABLE IF NOT EXISTS public.dept_manager
+(
+    dept_no character varchar(8) NOT NULL,
+    emp_no integer NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS public.employees
+(
+    emp_no integer NOT NULL,
+    emp_title_id character varchar(8),
+    birth_date date,
+    first_name character varchar(50),
+    last_name character varchar(50),
+    sex character varchar(1),
+    hire_date date,
+    PRIMARY KEY (emp_no)
+);
+
+CREATE TABLE IF NOT EXISTS public.salaries
+(
+    emp_no integer NOT NULL,
+    salary integer NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS public.titles
+(
+    title_id character varchar(8) NOT NULL,
+    title character varchar(50) NOT NULL,
+    PRIMARY KEY (title_id)
+);
+
